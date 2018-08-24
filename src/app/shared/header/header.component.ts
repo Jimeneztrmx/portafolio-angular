@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoPaginaService } from '../../services/info-pagina.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  // INYECTAR EL SERVICIO PARA PODERLO UTILIZAR ( INFO )
+  constructor( public _servicio: InfoPaginaService) { }
 
   ngOnInit() {
   }
