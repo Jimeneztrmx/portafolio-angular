@@ -2,24 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { productoInterface } from '../interfaces/producto.interface';
 import { timeout } from '../../../node_modules/@types/q';
-import { resolve } from 'path';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-
   cargando = true;
   productos: productoInterface[] = [];
   productosFiltrado: productoInterface[] = [];
 
   constructor(private http: HttpClient) {
     this.cargarProductos();
-
    }
-  
-  
+    
    private cargarProductos(){
 
     // hacer que regrese algo asincrono // PROMESAS EMACSCRIPT 6
@@ -34,14 +29,10 @@ export class ProductosService {
         setTimeout(() => {
           this.cargando=false;
         }, 2000);
-
         // cuando la siguiente linea se ejecuta qiuere decir que se resolvió correctamente
         resolve();
-
     });
-
-  
-      
+        
     })
   }
 
@@ -67,9 +58,7 @@ export class ProductosService {
       this.filtrarProductos(termino);
 
     }
-
-   
-
+ 
   }
 
   private filtrarProductos(termino: string){
@@ -79,7 +68,7 @@ export class ProductosService {
     this.productosFiltrado = [];
 
     termino = termino.toLocaleLowerCase(); 
-    
+        
     this.productos.forEach(producto =>{
 
       const tituloLower = producto.titulo.toLocaleLowerCase();
