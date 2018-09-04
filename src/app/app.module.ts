@@ -12,6 +12,7 @@ import { ItemComponent } from './pages/item/item.component';
 //Modulo agregado
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClient } from '../../node_modules/@types/selenium-webdriver/http';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClient } from '../../node_modules/@types/selenium-webdriver/http';
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
-    ItemComponent
+    ItemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
